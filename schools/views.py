@@ -38,7 +38,7 @@ def students_detail(request, id):
 
 def add_stud(request):
     if request.method == 'POST':                # if the request is POST -> this request is the return of the form
-        form = Student_forms(request.POST)      # so we need to test the information
+        form = Student_forms(request.POST)      # so we need to Tests the information
         if(form.is_valid()):                    # if the from is valid and if no other students is already named like that we can save our new student else we delete him
             student = form.save()
             for stu in Student.objects.all():
@@ -56,7 +56,7 @@ def add_stud(request):
 
 def add_school(request):
     if request.method == 'POST':                # if the request is POST -> this request is the return of the form
-        form = School_forms(request.POST)       # so we need to test the information
+        form = School_forms(request.POST)       # so we need to Tests the information
         if(form.is_valid()):                    # if the from is valid and if no other school is named like that we can save ous new sschool else we delete it
             school = form.save()
             for sch in School.objects.all():
