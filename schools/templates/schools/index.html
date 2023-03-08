@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student's HUB | Home page</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://lunevedy.com/assets/2.0/css/lunevedy.min.css" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/detail.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/global.css' %}" />
+    <link rel="icon" href="../../static/images/banier_ico.png">
+</head>
+
+
+<body>
+    <!-- header starts here -->
+    <header class="theme-light text-center-desktop text-center-mobile">
+        <div class="container-text small">
+                <div class="badge corners-soft">WELLCOME TO</div>
+                <h1>STUDENT<span class="highlight"> HUB</span></h1>
+                <h2>The place where you can find all your future <span>friends</span></h2>
+        </div>
+
+        <div class="container-btn">
+			<a href="#1" class="btn btn-soft btn-plain"><span>School list</span></a>
+            <a href="students/" class="btn btn-outline btn-soft"><span>Students list</span></a>
+		</div>
+        <div class="container-btn">
+            <a href="../" class="btn btn-outline btn-soft"><span>Accounts Settings</span></a>
+        </div>
+    </header>
+
+
+    <main>
+    <div class="container-media" style="margin-bottom: -10px">
+        <img src="../../static/images/banier_large.png" alt="Placeholder image">
+    </div>
+    <section class="section_list">
+    <div>
+        <h1 class =" container-txt school_list "> SCHOOL LIST :</h1>
+    </div>
+    <div class="list_school" id="1">
+        {% if longer_school_list %}
+            <ul>
+            {% for school in longer_school_list %}
+                {% if school.name != "No school" %}
+                    <div class="school_container">
+                        <p><a class="container-txt link" href="{% url 'Schools:detail' school.id %}">{{ school.name }}</a></p>
+                    </div>
+                {% endif  %}
+            {% endfor %}
+            </ul>
+        {% else %}
+            </div>
+            <p>No schools are available.</p>
+        {% endif %}
+    </div>
+    <div class="school_link">
+        <p><a href="add/">add a school</a></p>
+    </div>
+    </section>
+    </main>
+</body>

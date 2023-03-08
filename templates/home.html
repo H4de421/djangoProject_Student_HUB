@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student's HUB | Home page</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://lunevedy.com/assets/2.0/css/lunevedy.min.css" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/global.css' %}" />
+    <link rel="icon" href="../../static/images/banier_ico.png">
+</head>
+
+
+<body>
+    <!-- header starts here -->
+    <header class="theme-light text-center-desktop text-center-mobile">
+
+        <div class="container-text">
+                <div class="badge corners-soft">WELLCOME TO</div>
+                <h1>STUDENT<span class="highlight"> HUB</span></h1>
+
+        <h2>The place where you can find all your future <span>friends</span></h2>
+        </div>
+        {% if user.is_authenticated %}
+            <div class="container-btn">
+			    <a href="{% url 'logout' %}" class="btn btn-soft btn-plain"><span>Log out</span></a>
+                <a href="{% url 'password_reset' %}" class="btn btn-outline btn-soft"><span>Reset Password</span></a>
+		    </div>
+            <div class="container-btn">
+                <a href="schools/" class="btn btn-plain btn-soft"><span>Go to app</span></a>
+            </div>
+        {% else %}
+            <p class="alerte"><span>You are not logged in</span></p>
+            <div class="container-btn">
+			    <a href="{% url 'login' %}" class="btn btn-soft btn-plain"><span>Log in</span></a>
+                <a href="accounts/signup/" class="btn btn-outline btn-soft"><span>sign up</span></a>
+		    </div>
+        {% endif %}
+    </header>
+
+
+    <main>
+    <div class="container-media" style="margin-bottom: -10px">
+        <img src="../../static/images/banier_large.png" alt="Placeholder image">
+    </div>
+    </main>
+</body>

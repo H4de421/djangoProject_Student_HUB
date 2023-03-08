@@ -1,0 +1,104 @@
+
+
+header.theme-light .container-text div.badge {color : white}
+header.theme-light .container-text h1 span {color : red}
+header.theme-light .container-text h2 span {color : red}
+
+
+header.theme-light .container-btn a.btn:nth-child(2):focus,
+header.theme-light .container-btn a.btn:nth-child(2):hover,
+header.theme-light .container-btn a.btn:nth-child(2):active { color: red }
+
+header.theme-light .container-btn a.btn:nth-child(2):focus,
+header.theme-light .container-btn a.btn:nth-child(2):hover,
+header.theme-light .container-btn a.btn:nth-child(2):active { border-color: red }
+
+header.theme-light .container-btn a.btn:nth-child(2):focus,
+header.theme-light .container-btn a.btn:nth-child(2):hover,
+header.theme-light .container-btn a.btn:nth-child(2):active { background-color: white}
+
+header.theme-light .container-btn a.btn:nth-child(1):focus,
+header.theme-light .container-btn a.btn:nth-child(1):hover,
+header.theme-light .container-btn a.btn:nth-child(1):active { color: red }
+
+section h1{
+    color: white;
+    text-decoration: underline;
+    font-size: xxx-large;
+    text-underline-offset: 10px;
+    text-decoration-thickness: 10px;
+    text-decoration-color: red;
+    text-decoration-style: dashed;
+}
+
+section {
+    color: white;
+    font-size: x-large;
+    text-align: center;
+}
+
+.school_list {
+    margin-bottom: 40px;
+    background: black;
+}
+
+.school_container {
+    padding: 12px;
+    margin-bottom: 20px;
+    margin-up: 20px;
+}
+
+.section_list {
+    background: black;
+}
+
+
+.list_school a:link {
+    color: white;
+    text-decoration: none;
+}
+
+.list_school a:visited {
+    color:red;
+    text-decoration: none;
+}
+
+.school_link a:link {
+    color : white;
+    text-decoration: underline;
+}
+
+.school_link {
+    padding-top: 50px;
+}
+.school_link a:visited{
+    color : white;
+    text-decoration: underline;
+    text-decoration-color: red;
+}
+.text_div {
+    background: rosybrown;
+}
+
+.container-media  {
+    z-index: 0 ;
+    padding: 0 ;
+    margin-bottom: -10px;
+}
+.wave {
+    z-index:1;
+    padding:0;
+    margin:0;
+}
+.container-text {
+    z-index: 2;
+    padding: 0;
+}
+
+.list_school {
+  background: black;
+}
+s
+
+
+

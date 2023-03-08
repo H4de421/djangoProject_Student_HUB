@@ -1,0 +1,20 @@
+<h1>{{ school.name }}'s students :</h1>
+<ul>
+{% if school.student_set.all %}
+    <div>
+    <ul>
+        {% for student in school.student_set.all %}
+            <li>{{ student.name }}</li>
+            <input type="button" name="delete" id="student_{{ student.id }}" value="delete" >
+        {% endfor %}
+    <p><a href="../">back to school page</a></p>
+    </ul>
+    </div>
+{% else %}
+    <div>
+    <p>No student in this school</p>
+        <p>You can register more sutdents in the students section</p>
+    <p><a href="../">back to school page</a></p>
+    </div>
+{% endif  %}
+</ul>

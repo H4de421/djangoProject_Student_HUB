@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student's HUB | Student list</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://lunevedy.com/assets/2.0/css/lunevedy.min.css" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/global.css' %}" />
+    <link rel="icon" href="../../static/images/banier_ico.png">
+</head>
+
+<body>
+    <header class="theme-light text-center-desktop text-center-mobile">
+    <div class="container-text">
+        <h1>Globals <span>Students</span></h1>
+
+        <h2>the list of all our students order by school</h2>
+    </div>
+    <div class="container-btn">
+        <a href="../" class="btn btn-outline btn-soft"><span>back to home page</span></a>
+    </div>
+    </header>
+
+    <main>
+        <img class="container-media" style="margin-bottom: -6px" src="../../static/images/banier.png" alt="Placeholder image">
+
+        <section class="list_school">
+            <h1>Globals students :</h1>
+
+            <ul>
+
+            {% if list_stud %}
+                <ul>
+                {% for s in school_list %}
+                    {% if s.name != 'No school' %}
+                        <h2>{{ s.name }}</h2>
+                        {%  if s.student_set.all %}
+                            {% for student in s.student_set.all %}
+                                <div class="school_container">
+                                    <p><a class="container-text link" href="{{ student.id }}" >{{ student.name }}</a></p>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            <p>there is still no student register for this school</p>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+                <h2>No school</h2>
+                {%  if no_s.student_set.all %}
+                    {% for student in no_s.student_set.all %}
+                        <p><a href="{{ student.id }}" >{{ student.name }}</a></p>
+                    {% endfor %}
+                {% else %}
+                    <p>All students are register to a school</p>
+                {% endif %}
+            {% else %}
+                <div>
+                <p>still no student register</p>
+                </div>
+            {% endif  %}
+            </ul>
+            <div class="school_link">
+                <p><a href="add">add a students</a></p>
+                <p><a href="../">back to school page</a></p>
+            </div>
+            </ul>
+        </section>
+</main>
+
+</body>
