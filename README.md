@@ -1,9 +1,9 @@
 Django project School app (Students HUB)
 Clement JONGLAS
 
-|-----------------------------------------------------------|
+
 |----------------------|CA 1 CREATION|----------------------|
-|-----------------------------------------------------------|
+
 
 ------------------------------------------------------------- schools uses
 
@@ -54,9 +54,9 @@ fianly you can also see the list of every students, order by schoolby clicking t
     }
 
 
-|-----------------------------------------------------------|
+
 |-----------------------|CA 2 UPDATE|-----------------------|
-|-----------------------------------------------------------|
+
 
 
 New addition : 
@@ -78,8 +78,12 @@ Few fixes :
 -> corection of a little bug find in the number of staudent of schools:
 	when a students was created with a school link, or when a student was delete the atribute {nb_students} was updated, but not when a student's profile was modified.
 	
-	
 
-
+|-----------------------|CA 3 UPDATE|-----------------------|  
+  
+-> Sécurity fix :  
+    -> change the admin path because it's the first things someone will try to hack the website  
+    -> Protective sensitive data cause event if someone can hack the website, sensitive data ae protected  
+    -> HTTPs/SSL : today thoses are Standards from industry, every website is secure like that.  
 
 
