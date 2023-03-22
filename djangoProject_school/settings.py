@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import secrets
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,15 +21,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-2*7)si5j*g2g&t(fu=++&6gi(exs&@3s-^z^c))j_bd)r6%ngi'
+SECRET_KEY = secrets.token_urlsafe(38)
+#'django-insecure-2*7)si5j*g2g&t(fu=++&6gi(exs&@3s-^z^c))j_bd)r6%ngi'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True;
-SECURE_HSTS_SECONDS = 2,592,000
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-SECURE_HSTS_PRELOAD = True
+DEBUG = True ;
+#SECURE_HSTS_SECONDS = 2,592,000
+#SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+#SECURE_HSTS_PRELOAD = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost','127.0.0.1']
 
 
 # Application definition
@@ -84,7 +86,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
         'USER': 'Clement',
-        'PASSWORD': '',
+        'PASSWORD': 'Loutre102003)',
         'HOST': 'localhost',
     }
 }
@@ -134,9 +136,9 @@ LOGOUT_REDIRECT_URL = "/"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-SECURE_SSL_REDIRECT = True;
-SESSION_COOKIE = True;
-CSRF_COOKIE_SECURE = True;
+#SECURE_SSL_REDIRECT = True;
+#SESSION_COOKIE = True;
+#CSRF_COOKIE_SECURE = True;
 
 EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
 EMAIL_FILE_PATH = BASE_DIR / "sent_emails"

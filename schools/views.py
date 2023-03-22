@@ -9,15 +9,16 @@ from .models import School, Student
 
 
 def index(request):
+    print("ok here")
+    print(School.objects.order_by('-id'))
+    print("end print")
     longer_school_list = School.objects.order_by('-name')                   #display the main menu of the app
-
-    template = loader.get_template('schools/index.html')
-    context = {'longer_school_list': longer_school_list,}
+    context = {'longer_school_list': longer_school_list}
     return render(request, 'schools/index.html', context)
 
 def detail(request, school_id):
     try:
-        school = School.objects.get(pk=school_id)
+        school = School.objects.get(id=school_id)
     except School.DoesNotExist:
         raise Http404("that school does not exist")                         #display the list of students of the school
     return render(request, 'schools/detail.html', {'school': school})
